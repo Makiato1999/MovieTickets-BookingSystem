@@ -51,7 +51,7 @@ html, body{
     font-size: 17px;
 }
 .topnav a:hover {
-    background-color: #ddd;
+    background-color: rgb(161, 161, 161);
     color: black;
 }
 .topnav a.active{
@@ -64,6 +64,7 @@ html, body{
     float: right;
 }
 .topnav input[type=text]{
+    width: 400px;
     padding: 6px;
     margin-top: 8px;
     font-size: 17px;
@@ -71,7 +72,7 @@ html, body{
 }
 .topnav .search-container button{
     float: right;
-    padding: 6px 10px;
+    padding: 16px 16px;
     margin-top: 8px;
     margin-right: 16px;
     background: #ddd;
@@ -206,19 +207,24 @@ img{
 }
 /*--------------------main end--------------------*/
 /*--------------------footer--------------------*/
-footer{
+.footer{
     width: 100%;
     height: 100px;   /* footer的高度一定要是固定值*/ 
     position: absolute;
     bottom: 0px;
     left: 0px;
     background:black;
+
+    display: flex;
+    justify-content: space-around;/* 平均分配*/ 
+
 }
-button{
-    margin-inline:inherit;
+.footer button{
+    margin-top: 35px;
+    width: 100px;
+    height: 30px;
 }
 /*--------------------footer end--------------------*/
-
 /*--------------------content page--------------------*/
 /*页面内窗口：相当于是在原来页面上新增了一个窗口*/
 #contentPage{/*充当背景*/
@@ -246,4 +252,38 @@ button{
     font-size: 28px;
     font-weight: bold;
 }
+
+.innerPage_top{
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;/* 平均分配*/ 
+}
+.innerPage_top .innerTitle{
+    margin-top: 20px;
+}
+.innerPage_center{
+    margin: 20px;
+}
+
 /*--------------------content page end--------------------*/
+/*--------------------seat page--------------------*/
+#seatPage{
+    display: none;/*默认消失的状态*/
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;/*覆盖全屏*/
+    height: 100%;
+    overflow: auto;/*如果需要的话可以有scroll*/
+    background-color:rgba(0, 0, 0, 0.4);/*透明黑色背景*/
+}
+.seatPage_content{/*充当页面内窗口*/
+    background-color: #fff;
+    margin: 2% auto;/*相当于margin: 1% auto 1% auto;（对应上右下左）*/
+    border: 1px solid  #888;
+    border-radius: 5px;
+    width: 50%;
+    height: 90%;
+}
+/*--------------------seat page end--------------------*/

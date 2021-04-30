@@ -91,24 +91,45 @@
         </div>
         <!--Footer-->
         <footer class="footer">
-            <a href="https://github.com/Makiato1999/MovieTickets-BookingSystem">
-                <button type="button">Contact us</button>
-            </a>
+            <form action="https://github.com/Makiato1999/MovieTickets-BookingSystem">
+                <button type="submit">Contact us</button>
+            </form>
             <button type="button">FAQ</button>
             <button type="button">Privacy Policy</button>
-            <a href="homepage.html">
-                <button type="button">Home</button>
-            </a>
+            <form action="homepage.html">
+                <button type="submit">Home</button>
+            </form>
         </footer>
     </div>
 
     <div id="contentPage"><!--this is the background-->
         <div class="contentPage_content"><!--this is the sub window--> 
             <span id="close" class="close" onclick="close_contentPage()">&times;</span>
-            <div>
-                <h2 id="contentPage_head"></h2>
-                <img src="moviePoster/hitmans-wifes-bodyguard.jpg" style="width:200px; height:300px" id="contentPage_image">
+            <div class="innerPage_top">
+                <div class="innerPoster">
+                    <img src="moviePoster/hitmans-wifes-bodyguard.jpg" style="width:200px; height:300px" id="contentPage_image">
+                </div>
+                <div class="innerTitle">
+                    <h2 id="contentPage_head"></h2>
+                </div>
             </div>
+            <div class="innerPage_center">
+                <h2>Description:</h2>
+                <p id="contentPage_description"></p>
+                <h2>Cast:</h2>
+                <p id="contentPage_cast"></p>
+            </div>
+            <div class="innerPage_bottom">
+                <form action="">
+                    <button type="submit">Seat</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="seatPage"><!--this is the background-->
+        <div class="seatPage_content"><!--this is the sub window--> 
+            <span id="close" class="close" onclick="close_contentPage()">&times;</span>
         </div>
     </div>
     
