@@ -37,8 +37,7 @@
                     object-fit: cover;">
                 </div>
                 <!--Posters-->
-                </body>
-                <div class="poster1" onclick="open_contentPage(0)" id="1">
+                <div class="poster1" onclick="open_contentPage(0)">
                     <img src="moviePoster/hitmans-wifes-bodyguard.jpg" alt="hitmans-wifes-bodyguard">
                     <a href="#contentPage"></a>
                     <p>hitmans-wifes-bodyguard</p>
@@ -120,16 +119,20 @@
                 <p id="contentPage_cast"></p>
             </div>
             <div class="innerPage_bottom">
-                <form action="">
-                    <button type="submit">Seat</button>
-                </form>
+                <!--put time list here-->
+                <div></div>
+                <div class="seatButton" onclick="open_seatPage()">
+                    <form action="#seatPage">
+                        <button type="submit" class="seat_button">Seat</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 
     <div id="seatPage"><!--this is the background-->
         <div class="seatPage_content"><!--this is the sub window--> 
-            <span id="close" class="close" onclick="close_contentPage()">&times;</span>
+            <span id="close2" class="close2" onclick="close_seatPage()">&times;</span>
         </div>
     </div>
     

@@ -85,20 +85,27 @@ function StopAblum() {
 //--------------------content page--------------------
 let index2 = 0;
 let content_page;//background
-let close_btn;
+let close_btn;//content page
+let close_btn2;//seat page
 let contentPage_image;//sub window poster
 let contentPage_head;//sub window poster name
 let contentPage_description;//sub window poster description
 let contentPage_cast;//sub window poster cast
 
+let seat_page;//background
+
 window.onload = function(){
+    //content Page
     content_page = document.getElementById("contentPage");
     close_btn = document.getElementById("close");
-
     contentPage_image = document.getElementById("contentPage_image");
     contentPage_head = document.getElementById("contentPage_head");
     contentPage_description = document.getElementById("contentPage_description");
     contentPage_cast = document.getElementById("contentPage_cast");
+
+    //seat Page
+    seat_page = document.getElementById("seatPage");
+    close_btn2 = document.getElementById("close2");
 }
 
 function open_contentPage(index3){
@@ -115,12 +122,22 @@ function close_contentPage(){
     content_page.style.display = "none";
     //loop = setInterval("changeImage()",1000);;
 }
+function close_seatPage(){
+    seat_page.style.display = "none";
+}
 
 window.onclick = function(event){
     if(event.target == content_page){
         close_contentPage();
     }
+    if (event.target == seat_page) {
+        close_seatPage();
+        close_contentPage();
+    }
 }
-
-
 //--------------------content page end--------------------
+//--------------------seat page--------------------
+function open_seatPage() {
+    seat_page.style.display = "block";
+}
+//--------------------seat page end--------------------

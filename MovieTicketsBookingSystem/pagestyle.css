@@ -286,4 +286,17 @@ img{
     width: 50%;
     height: 90%;
 }
+.close2{
+    float: right;
+    margin-right: 5px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.seat_button{
+    margin-top: 35px;
+    width: 100px;
+    height: 30px;
+}
+
 /*--------------------seat page end--------------------*/
