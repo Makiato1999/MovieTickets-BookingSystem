@@ -1,144 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel="stylesheet" href="pagestyle.css">
-    <link rel="stylesheet2" href="style1.css">
-    <script src="jscode.js"></script>
-    <script src = "logic1.js"></script>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style1.css">
+
 </head>
+
 <body>
-    <div id="container">
-        <!--Head-->
-        <div class="head">
-            <img id="logo" src="moviePoster/logo.png" alt="logo" style="border-color: black; width: 180px; height: 130px;">
-        </div>
-        <div class="main">
-            <!--topnav-->
-            <div class="topnav">
-                <a href="#contact">Account</a>
-                <div class="search-container">
-                    <form action="/action_page.php">
-                        <input type="text" placeholder="Search.." name="search">
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                      </form>
-                </div>
-            </div>
-            <!--Grid for posters-->
-            <div class="container-grid">
-                <!--Album-->
-                <div class="Album">
-                    <img src="moviePoster/hitmans-wifes-bodyguard.jpg" alt="hitmans-wifes-bodyguard" id="image" 
-                    style="border: 2px solid white;
-                    padding-left: 0px;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;">
-                </div>
-                <!--Posters-->
-                <div class="poster1" onclick="open_contentPage(0)">
-                    <img src="moviePoster/hitmans-wifes-bodyguard.jpg" alt="hitmans-wifes-bodyguard">
-                    <a href="#contentPage"></a>
-                    <p>hitmans-wifes-bodyguard</p>
-                </div>
-                <div class="poster2" onclick="open_contentPage(1)">
-                    <img src="moviePoster/in-the-earth.jpg" alt="in-the-earth">
-                    <a href="#contentPage"></a>
-                    <p>in-the-earth</p>
-                </div>
-                <div class="poster3" onclick="open_contentPage(2)">
-                    <img src="moviePoster/luca.jpg" alt="luca">
-                    <a href="#contentPage"></a>
-                    <p>luca</p>
-                </div>
-                <div class="poster4" onclick="open_contentPage(3)">
-                    <img src="moviePoster/minari.jpg" alt="minari">
-                    <a href="#contentPage"></a>
-                    <p>minari</p>
-                </div>
-                <div class="poster5" onclick="open_contentPage(4)">
-                    <img src="moviePoster/nobody.jpg" alt="nobody">
-                    <a href="#contentPage"></a>
-                    <p>nobody</p>
-                </div>
-                <div class="poster6" onclick="open_contentPage(5)">
-                    <img src="moviePoster/Oxygen.jpg" alt="Oxygen">
-                    <p>Oxygen</p>
-                </div>
-                <div class="poster7" onclick="open_contentPage(6)">
-                    <img src="moviePoster/spacejam-2.jpg" alt="spacejam-2">
-                    <a href="#contentPage"></a>
-                    <p>spacejam-2</p>
-                </div>
-                <div class="poster8" onclick="open_contentPage(7)">
-                    <img src="moviePoster/tenet.jpg" alt="tenet">
-                    <a href="#contentPage"></a>
-                    <p>tenet</p>
-                </div>
-                <div class="poster9" onclick="open_contentPage(8)">
-                    <img src="moviePoster/The_War_With_Grandpa.jpg" alt="The_War_With_Grandpa">
-                    <a href="#contentPage"></a>
-                    <p>The_War_With_Grandpa</p>
-                </div>
-                <div class="poster10" onclick="open_contentPage(9)">
-                    <img src="moviePoster/Zack-Snyder-Justice-League.jpg" alt="Zack-Snyder-Justice-League">
-                    <a href="#contentPage"></a>
-                    <p>Zack-Snyder-Justice-League</p>
-                </div>
-            </div>
-        </div>
-        <!--Footer-->
-        <footer class="footer">
-            <form action="https://github.com/Makiato1999/MovieTickets-BookingSystem">
-                <button type="submit">Contact us</button>
-            </form>
-            <button type="button">FAQ</button>
-            <button type="button">Privacy Policy</button>
-            <form action="homepage.html">
-                <button type="submit">Home</button>
-            </form>
-        </footer>
+    <!-- testing-->
+    <div id ="testing"> 
+        <button type="button" onclick="nextPage()">go</button>
     </div>
+    <!-- testing-->
 
-    <div id="contentPage"><!--this is the background-->
-        <div class="contentPage_content"><!--this is the sub window--> 
-            <span id="close" class="close" onclick="close_contentPage()">&times;</span>
-            <div class="innerPage_top">
-                <div class="innerPoster">
-                    <img src="moviePoster/hitmans-wifes-bodyguard.jpg" style="width:200px; height:300px" id="contentPage_image">
-                </div>
-                <div class="innerTitle">
-                    <h2 id="contentPage_head"></h2>
-                </div>
-            </div>
-            <div class="innerPage_center">
-                <h2>Description:</h2>
-                <p id="contentPage_description"></p>
-                <h2>Cast:</h2>
-                <p id="contentPage_cast"></p>
-            </div>
-            <div class="innerPage_bottom">
-                <!--put time list here-->
-                <div></div>
-                <div class="seatButton" onclick="nextPage()">
-                    <form action="#SeatMapPage">
-                        <button type="submit" class="seat_button">Seat</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="seatPage"><!--this is the background-->
-        <div class="seatPage_content"><!--this is the sub window--> 
-            <span id="close2" class="close2" onclick="close_seatPage()">&times;</span>
-        </div>
-    </div>
-    
-    <!-- yunji edit below-->
     <!-- First row - This is the seat map part -->
     <div id="SeatMapPage">
         <div id="seatMapBacknCheckOut">
@@ -460,9 +334,8 @@
                 <!-- Dynamically insert amounts -->
             </div>
         </div>        
-    </div><!-- end checkout page -->   
-
-    <!-- yunji edit above-->
-
+    </div><!-- end checkout page -->
 </body>
+
 </html>
+<script src = "logic1.js"></script>
