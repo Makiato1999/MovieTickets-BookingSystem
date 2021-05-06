@@ -3,138 +3,56 @@ var seatMap = document.getElementById("SeatMapPage");
 var checkOut = document.getElementById("CheckOutPage");
 var currentPage = test;
 
-
-
 var seatArray = [
     [
-        seat1A = {
-            isSeleted : false,        
-        },
-        seat1B = {
-            isSeleted : false,        
-        },
-        seat1C = {
-            isSeleted : false,        
-        },
-        seat1D = {
-            isSeleted : false,        
-        },
-        seat1E = {
-            isSeleted : false,        
-        },
-        seat1F = {
-            isSeleted : false,        
-        },
-        seat1G = {
-            isSeleted : false,        
-        },
-        seat1H = {
-            isSeleted : false,        
-        }
+        seat1A = {isSeleted : false},
+        seat1B = {isSeleted : false},
+        seat1C = {isSeleted : false},
+        seat1D = {isSeleted : false},
+        seat1E = {isSeleted : false},
+        seat1F = {isSeleted : false},
+        seat1G = {isSeleted : false},
+        seat1H = {isSeleted : false}
     ],
     [
-        seat2A = {
-            isSeleted : false,        
-        },
-        seat2B = {
-            isSeleted : false,        
-        },
-        seat2C = {
-            isSeleted : false,        
-        },
-        seat2D = {
-            isSeleted : false,        
-        },
-        seat2E = {
-            isSeleted : false,        
-        },
-        seat2F = {
-            isSeleted : false,        
-        },
-        seat2G = {
-            isSeleted : false,        
-        },
-        seat2H = {
-            isSeleted : false,        
-        }        
+        seat2A = {isSeleted : false},
+        seat2B = {isSeleted : false},
+        seat2C = {isSeleted : false},
+        seat2D = {isSeleted : false},
+        seat2E = {isSeleted : false},
+        seat2F = {isSeleted : false},
+        seat2G = {isSeleted : false},
+        seat2H = {isSeleted : false}        
     ],
     [
-        seat3A = {
-            isSeleted : false,        
-        },
-        seat3B = {
-            isSeleted : false,        
-        },
-        seat3C = {
-            isSeleted : false,        
-        },
-        seat3D = {
-            isSeleted : false,        
-        },
-        seat3E = {
-            isSeleted : false,        
-        },
-        seat3F = {
-            isSeleted : false,        
-        },
-        seat3G = {
-            isSeleted : false,        
-        },
-        seat3H = {
-            isSeleted : false,        
-        }        
+        seat3A = {isSeleted : false},
+        seat3B = {isSeleted : false},
+        seat3C = {isSeleted : false},
+        seat3D = {isSeleted : false},
+        seat3E = {isSeleted : false},
+        seat3F = {isSeleted : false},
+        seat3G = {isSeleted : false},
+        seat3H = {isSeleted : false}        
     ],
     [
-        seat4A = {
-            isSeleted : false,        
-        },
-        seat4B = {
-            isSeleted : false,        
-        },
-        seat4C = {
-            isSeleted : false,        
-        },
-        seat4D = {
-            isSeleted : false,        
-        },
-        seat4E = {
-            isSeleted : false,        
-        },
-        seat4F = {
-            isSeleted : false,        
-        },
-        seat4G = {
-            isSeleted : false,        
-        },
-        seat4H = {
-            isSeleted : false,        
-        }        
+        seat4A = {isSeleted : false},
+        seat4B = {isSeleted : false},
+        seat4C = {isSeleted : false},
+        seat4D = {isSeleted : false},
+        seat4E = {isSeleted : false},
+        seat4F = {isSeleted : false},
+        seat4G = {isSeleted : false},
+        seat4H = {isSeleted : false}        
     ],
     [
-        seat5A = {
-            isSeleted : false,        
-        },
-        seat5B = {
-            isSeleted : false,        
-        },
-        seat5C = {
-            isSeleted : false,        
-        },
-        seat5D = {
-            isSeleted : false,        
-        },
-        seat5E = {
-            isSeleted : false,        
-        },
-        seat5F = {
-            isSeleted : false,        
-        },
-        seat5G = {
-            isSeleted : false,        
-        },
-        seat5H = {
-            isSeleted : false,        
-        }        
+        seat5A = {isSeleted : false},
+        seat5B = {isSeleted : false},
+        seat5C = {isSeleted : false},
+        seat5D = {isSeleted : false},
+        seat5E = {isSeleted : false},
+        seat5F = {isSeleted : false},
+        seat5G = {isSeleted : false},
+        seat5H = {isSeleted : false}        
     ]
 ];
 
@@ -150,7 +68,7 @@ function selectSeat(seatRow , seatCol){
         document.getElementById(name).className = 'changeToBlue';
     }
 }
-
+/*
 function prevPage(){
     switch(currentPage){
 
@@ -168,6 +86,7 @@ function prevPage(){
             break;
     }
 }
+*/
 
 function seatMapPage(){
     test.style.display = "none";

@@ -78,7 +78,7 @@ function changeImage() {
     img.src = posters[index++].imgLink;
 }
 
-let loop = setInterval("changeImage()",1200);
+let loop = setInterval("changeImage()",1700);
 function StopAblum() {
     clearInterval(loop);
 }
@@ -86,13 +86,15 @@ function StopAblum() {
 let index2 = 0;
 let content_page;//background
 let close_btn;//content page
-let close_btn2;//seat page
+//let close_btn2;//seat page
+let close_btn3;//cart page
 let contentPage_image;//sub window poster
 let contentPage_head;//sub window poster name
 let contentPage_description;//sub window poster description
 let contentPage_cast;//sub window poster cast
 
 let seat_page;//background
+let cart_page;
 
 window.onload = function(){
     //content Page
@@ -105,7 +107,11 @@ window.onload = function(){
 
     //seat Page
     seat_page = document.getElementById("seatPage");
-    close_btn2 = document.getElementById("close2");
+    //close_btn2 = document.getElementById("close2");
+
+    //cart Page
+    close_btn3 = document.getElementById("close3");
+    cart_page = document.getElementById("cartPage");
 }
 
 function open_contentPage(index3){
@@ -125,6 +131,9 @@ function close_contentPage(){
 function close_seatPage(){
     seat_page.style.display = "none";
 }
+function close_cartPage(){
+    cart_page.style.display = "none";
+}
 
 window.onclick = function(event){
     if(event.target == content_page){
@@ -134,6 +143,11 @@ window.onclick = function(event){
         close_seatPage();
         close_contentPage();
     }
+    if (event.target == cart_page) {
+        close_seatPage();
+        close_contentPage();
+        close_cartPage();
+    }
 }
 //--------------------content page end--------------------
 //--------------------seat page--------------------
@@ -141,4 +155,8 @@ function open_seatPage() {
     seat_page.style.display = "block";
 }
 //--------------------seat page end--------------------
-// testing
+//--------------------cart page--------------------
+function open_cartPage() {
+    cart_page.style.display = "block";
+}
+//--------------------cart page end--------------------
