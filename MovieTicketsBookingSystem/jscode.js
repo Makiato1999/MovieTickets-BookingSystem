@@ -82,6 +82,60 @@ let loop = setInterval("changeImage()",1700);
 function StopAblum() {
     clearInterval(loop);
 }
+//--------------------seat map--------------------
+var seatArray = [
+    [
+        seat1A = {isSeleted : false},
+        seat1B = {isSeleted : false},
+        seat1C = {isSeleted : false},
+        seat1D = {isSeleted : false},
+        seat1E = {isSeleted : false},
+        seat1F = {isSeleted : false},
+        seat1G = {isSeleted : false},
+        seat1H = {isSeleted : false}
+    ],
+    [
+        seat2A = {isSeleted : false},
+        seat2B = {isSeleted : false},
+        seat2C = {isSeleted : false},
+        seat2D = {isSeleted : false},
+        seat2E = {isSeleted : false},
+        seat2F = {isSeleted : false},
+        seat2G = {isSeleted : false},
+        seat2H = {isSeleted : false}        
+    ],
+    [
+        seat3A = {isSeleted : false},
+        seat3B = {isSeleted : false},
+        seat3C = {isSeleted : false},
+        seat3D = {isSeleted : false},
+        seat3E = {isSeleted : false},
+        seat3F = {isSeleted : false},
+        seat3G = {isSeleted : false},
+        seat3H = {isSeleted : false}        
+    ],
+    [
+        seat4A = {isSeleted : false},
+        seat4B = {isSeleted : false},
+        seat4C = {isSeleted : false},
+        seat4D = {isSeleted : false},
+        seat4E = {isSeleted : false},
+        seat4F = {isSeleted : false},
+        seat4G = {isSeleted : false},
+        seat4H = {isSeleted : false}        
+    ],
+    [
+        seat5A = {isSeleted : false},
+        seat5B = {isSeleted : false},
+        seat5C = {isSeleted : false},
+        seat5D = {isSeleted : false},
+        seat5E = {isSeleted : false},
+        seat5F = {isSeleted : false},
+        seat5G = {isSeleted : false},
+        seat5H = {isSeleted : false}        
+    ]
+];
+//--------------------seat map end--------------------
 //--------------------content page--------------------
 let index2 = 0;
 let content_page;//background
@@ -94,8 +148,17 @@ let contentPage_description;//sub window poster description
 let contentPage_cast;//sub window poster cast
 
 let seat_page;//background
+//let seat_button;//button
 let cart_page;
 
+//cart
+var cartItemDiv;
+var totalPriceDiv;
+var imgAddress;
+var movieName;
+
+//home
+let home;
 window.onload = function(){
     //content Page
     content_page = document.getElementById("contentPage");
@@ -107,11 +170,15 @@ window.onload = function(){
 
     //seat Page
     seat_page = document.getElementById("seatPage");
+    //seat_button = document.getElementsByClassName("toseatMap_button");
     //close_btn2 = document.getElementById("close2");
 
     //cart Page
     close_btn3 = document.getElementById("close3");
     cart_page = document.getElementById("cartPage");
+
+    cartItemDiv = document.getElementById("checkOutBoxLeft");
+    totalPriceDiv = document.getElementById("totalPrice");
 }
 
 function open_contentPage(index3){
@@ -119,8 +186,10 @@ function open_contentPage(index3){
     //StopAblum();
 
     contentPage_head.innerHTML = posters[index3].name;
+    movieName = contentPage_head.innerHTML;
     //change content page poster here
     contentPage_image.src = posters[index3].imgLink;
+    imgAddress = contentPage_image.src;
     contentPage_description.innerHTML = posters[index3].description;
     contentPage_cast.innerHTML = posters[index3].cast;
 }
@@ -138,12 +207,10 @@ function close_cartPage(){
 window.onclick = function(event){
     if(event.target == content_page){
         close_contentPage();
-    }
-    if (event.target == seat_page) {
+    }else if (event.target == seat_page) {
         close_seatPage();
         close_contentPage();
-    }
-    if (event.target == cart_page) {
+    }else if (event.target == cart_page) {
         close_seatPage();
         close_contentPage();
         close_cartPage();
@@ -152,11 +219,71 @@ window.onclick = function(event){
 //--------------------content page end--------------------
 //--------------------seat page--------------------
 function open_seatPage() {
-    seat_page.style.display = "block";
+    //seat_page.style.display = "block";
+    seat_page.style.display = "inline";
+}
+function selectSeat(seatRow , seatCol){
+    var name = 'seat';
+    name+= seatRow;
+    name+= seatCol;
+    if(seatArray[seatRow-1][seatCol-1].isSeleted == false){
+        seatArray[seatRow-1][seatCol-1].isSeleted = true;
+        document.getElementById(name).className = 'changeToGreen';
+    }else{
+        seatArray[seatRow-1][seatCol-1].isSeleted = false;
+        document.getElementById(name).className = 'changeToBlue';
+    }
 }
 //--------------------seat page end--------------------
 //--------------------cart page--------------------
 function open_cartPage() {
     cart_page.style.display = "block";
+    fillCart();
+}
+function fillCart(){
+    //var cartItemDiv = document.getElementById("checkOutBoxLeft");
+    //var totalPriceDiv = document.getElementById("totalPrice");
+    var itemHTMl = "";
+    var priceHTML  = "";
+    var countTotal = 0.0;
+
+    for(let i = 0 ; i<seatArray.length ; i++ ){
+        for(let j=0 ; j<seatArray[i].length ; j++){
+            if(seatArray[i][j].isSeleted == true){
+                var seatNum = (i+1);
+                var convertj = String.fromCharCode(65 + j) ;
+                seatNum += convertj;
+                itemHTMl += `<div class="ticketCard">`;
+                itemHTMl += `<img class="ticketCardPic" src=`+ imgAddress + `>`; //src to be edit
+                itemHTMl += `<p style="float:left;">` + movieName + `</p>`; //to be edit 
+                itemHTMl += `<p style="float:right;">${seatNum}</p>`;
+
+                itemHTMl +=`</div>`;
+
+                countTotal += 10.0; //to change to ticket price;
+            }
+        }//end for
+    }//end for
+
+    priceHTML += `<p>$${countTotal.toFixed(2)}</p>`;
+    priceHTML += `<p>$${(countTotal * 0.05).toFixed(2)}</p>`;
+    priceHTML += `<p>$${(countTotal * 0.07).toFixed(2)}</p>`;
+    priceHTML += `<p>$${((countTotal) * 1.12).toFixed(2)}</p>`;
+
+    cartItemDiv.innerHTML = itemHTMl;
+    totalPriceDiv.innerHTML = priceHTML;
+}
+
+function testCart(){
+    var totalPriceDiv1 = document.getElementById("totalPrice");
+    var priceHTML1  = "";
+    var countTotal1 = 10.0;
+
+    priceHTML1 += `<p>$${countTotal1.toFixed(2)}</p>`;
+    priceHTML1 += `<p>$${(countTotal1 * 0.05).toFixed(2)}</p>`;
+    priceHTML1 += `<p>$${(countTotal1 * 0.07).toFixed(2)}</p>`;
+    priceHTML1 += `<p>$${((countTotal1) * 1.12).toFixed(2)}</p>`;
+
+    totalPriceDiv1.innerHTML = priceHTML1;
 }
 //--------------------cart page end--------------------

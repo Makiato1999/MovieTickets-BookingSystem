@@ -34,6 +34,7 @@ html, body{
     width: 100%;
     height: 1200px;
     background: rgb(9, 11, 41);
+    overflow: auto;
 }
 .topnav{
     overflow: hidden;
@@ -245,6 +246,7 @@ img{
     border-radius: 5px;
     width: 700px;
     height: 90%;
+    overflow: auto;
 }
 .close{
     float: right;
@@ -285,6 +287,7 @@ img{
     border-radius: 5px;
     width: 700px;
     height: 90%;
+    overflow: auto;
 }
 
 .toseatMap_button{
@@ -403,7 +406,7 @@ img{
     background-color: green;
 }
 .changeToBlue{
-    background-color: blue;
+    background-color: rgb(93, 93, 231);
 }
 /*--------------------seat page end--------------------*/
 /*--------------------cart page--------------------*/
@@ -425,6 +428,7 @@ img{
     border-radius: 5px;
     width: 700px;
     height: 90%;
+    overflow: auto;
 }
 .back_button2{
     margin-top:9px;   
@@ -445,19 +449,16 @@ img{
 .confirm_button{
     right:0.5%;
     margin-top:9px;  
-    color: white;
-    background-color: black;
-    border: solid 1px black;
+    color: hsl(239, 34%, 35%);
+    background-color: hsl(239, 34%, 35%);
+    border: solid 1px hsl(239, 34%, 35%);
     width: 75px; 
     height: 40px;
     float: right;
     font-size: larger;
     z-index: 3;
 }
-.confirm_button:hover {
-    filter: invert(1);
-    border: solid 1px white;
-}
+
 
 #checkOutBoxLeft{
     margin-top: 55px;
@@ -490,10 +491,8 @@ img{
     margin-bottom: 25px;
     margin-left: 10px;
     width:88%;
-    height:150px;
+    height:170px;
     background-color: white;
-    border: solid 5px black;
-    height: 80px ;
   
 }
 .ticketCardPic{
@@ -501,7 +500,7 @@ img{
     margin-top: 10px;
     float: left;
     width: 100px;
-    height: 60px;
+    height: 150px;
 }
 .priceInfo{
     width:49%;

@@ -1,6 +1,6 @@
-var content_page = document.getElementById("contentPage");
+//var content_page = document.getElementById("contentPage");
 var seatMap = document.getElementById("SeatMapPage");
-var checkOut = document.getElementById("CheckOutPage");
+var checkOut = document.getElementById("cartPage");
 var currentPage = test;
 
 var seatArray = [
@@ -86,7 +86,7 @@ function prevPage(){
             break;
     }
 }
-*/
+
 
 function seatMapPage(){
     test.style.display = "none";
@@ -118,7 +118,7 @@ function nextPage(){
             break;
     }  
 }
-
+*/
 
 
 function fillCart(){
